@@ -2,6 +2,7 @@ package co.edu.utp.isc.gia.Dia2.controller;
 
 import co.edu.utp.isc.gia.Dia2.dto.EnvioDTO;
 import co.edu.utp.isc.gia.Dia2.dto.UsuarioDTO;
+import co.edu.utp.isc.gia.Dia2.entities.UsuarioEntity;
 import co.edu.utp.isc.gia.Dia2.exception.BadRequestException;
 import co.edu.utp.isc.gia.Dia2.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,11 @@ public class UsuarioController {
     @DeleteMapping("borrarPorId")
     public UsuarioDTO borrarUsuarioPorId(@RequestBody UsuarioDTO usuarioDTO){
         return usuarioService.borrarUsuarioPorId(usuarioDTO);
+    }
+
+    @GetMapping("obtenerUsuarioHistorial")
+    public UsuarioEntity obtenerUsuarioHistorial(@RequestBody Long id){
+        return usuarioService.obtenerUsuarioHistorial(id);
     }
 
 }

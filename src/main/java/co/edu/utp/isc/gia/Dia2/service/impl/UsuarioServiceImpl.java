@@ -95,6 +95,13 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     }
 
+    @Override
+    public UsuarioEntity obtenerUsuarioHistorial(Long id) {
+        Optional<UsuarioEntity> usuarioEntityOptional = usuarioRepository.findById(id);
+        if(usuarioEntityOptional.isPresent()) return usuarioEntityOptional.get();
+        return null;
+    }
+
 
 }
 

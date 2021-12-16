@@ -2,6 +2,7 @@ package co.edu.utp.isc.gia.Dia2.service;
 
 import co.edu.utp.isc.gia.Dia2.dto.EnvioDTO;
 import co.edu.utp.isc.gia.Dia2.dto.UsuarioDTO;
+import co.edu.utp.isc.gia.Dia2.entities.UsuarioEntity;
 import co.edu.utp.isc.gia.Dia2.exception.BadRequestException;
 
 import java.util.List;
@@ -12,4 +13,5 @@ public interface UsuarioService {
     List<EnvioDTO> obtenerUsuarioPorCedula(Long cedula) throws BadRequestException;
     UsuarioDTO actualizarRegistro(UsuarioDTO usuarioDTO);
     UsuarioDTO borrarUsuarioPorId(UsuarioDTO usuarioDTO);
+    UsuarioEntity obtenerUsuarioHistorial(Long id);
 }
