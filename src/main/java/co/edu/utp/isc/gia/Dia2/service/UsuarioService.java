@@ -10,6 +10,6 @@ public interface UsuarioService {
     UsuarioDTO crearUsuario(UsuarioDTO usuarioDTO);
     UsuarioDTO obtenerUsuario(Long id);
     List<EnvioDTO> obtenerUsuarioPorCedula(Long cedula) throws BadRequestException;
-
-
+    UsuarioDTO actualizarRegistro(UsuarioDTO usuarioDTO);
+    UsuarioDTO borrarUsuarioPorId(UsuarioDTO usuarioDTO);
 }

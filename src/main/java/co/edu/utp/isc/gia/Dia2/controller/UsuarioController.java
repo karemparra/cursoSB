@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("usuario")
@@ -29,6 +30,16 @@ public class UsuarioController {
     @GetMapping("obtenerPorCedula")
     public List<EnvioDTO> obtenerUsuarioPorCedula(@RequestParam("cedula") Long cedula) throws BadRequestException {
         return usuarioService.obtenerUsuarioPorCedula(cedula);
+    }
+
+    @PutMapping("actualizarRegistro")
+    public UsuarioDTO actualizarRegistro(@RequestBody UsuarioDTO usuarioDTO){
+        return usuarioService.actualizarRegistro(usuarioDTO);
+    }
+
+    @DeleteMapping("borrarPorId")
+    public UsuarioDTO borrarUsuarioPorId(@RequestBody UsuarioDTO usuarioDTO){
+        return usuarioService.borrarUsuarioPorId(usuarioDTO);
     }
 
 }
