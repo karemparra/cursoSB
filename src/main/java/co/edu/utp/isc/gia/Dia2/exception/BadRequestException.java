@@ -1,6 +1,6 @@
 package co.edu.utp.isc.gia.Dia2.exception;
 
-public class BadRequestException extends Exception{
+public class BadRequestException extends RuntimeException{
     public BadRequestException(String message){
         super(message);
     }
